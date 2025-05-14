@@ -10,9 +10,12 @@
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^13.2.1",
     "axios": "^1.9.0",
+    "base64-encode-file": "^1.0.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.3",
+    "react-hot-toast": "^2.5.2",
+    "react-image-file-resizer": "^0.4.8",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.0",
     "react-scripts": "5.0.1",
@@ -48,5 +51,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }

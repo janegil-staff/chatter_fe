@@ -8,6 +8,7 @@ export default function Search({ searchLength, setSearchResults }) {
   const { token } = user;
   const [show, setShow] = useState(false);
   const handleSearch = async (e) => {
+    console.log(process.env.REACT_APP_API_ENDPOINT);
     if (e.target.value && e.key === "Enter") {
       try {
         const { data } = await axios.get(

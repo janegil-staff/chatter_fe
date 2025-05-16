@@ -38,7 +38,7 @@ export default function RegisterForm() {
     if (picture) {
       let base64Image = await base64(picture);
 
-      let res = await dispatch(registerUser({ ...data, picture: base64Image }));
+      let res = await dispatch(registerUser({ ...data, image: base64Image }));
 
       if (res?.payload?.user) {
         navigate("/");

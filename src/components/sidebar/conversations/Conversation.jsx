@@ -21,7 +21,6 @@ function Conversation({ convo, socket, online, typing }) {
   };
   const openConversation = async () => {
     let newConvo = await dispatch(open_create_conversation(values));
-    socket.emit("join conversation", newConvo.payload._id);
   };
   return (
     <li

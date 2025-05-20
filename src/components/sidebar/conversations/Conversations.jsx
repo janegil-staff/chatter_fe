@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { checkOnlineStatus, getConversationId } from "../../../utils/chat";
+import { checkOnlineStatus } from "../../../utils/chat";
 import Conversation from "./Conversation";
 
 export default function Conversations({ onlineUsers, typing }) {

@@ -29,7 +29,7 @@ function ChatActions({ socket }) {
     e.preventDefault();
     setLoading(true);
     let newMsg = await dispatch(sendMessage(values));
-    socket.emit("new message", newMsg.payload);
+    socket.emit("send message", newMsg.payload);
     setMessage("");
     setLoading(false);
   };
@@ -38,9 +38,7 @@ function ChatActions({ socket }) {
       onSubmit={(e) => SendMessageHandler(e)}
       className="dark:bg-dark_bg_2 h-[60px] w-full flex items-center absolute bottom-0 py-2 px-4 select-none"
     >
-      {/*Container*/}
       <div className="w-full flex items-center gap-x-2">
-        {/*Emojis and attachpments*/}
         <ul className="flex gap-x-2">
           <EmojiPickerApp
             textRef={textRef}

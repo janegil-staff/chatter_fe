@@ -1,8 +1,4 @@
-import {
-  createAsyncThunk,
-  createSlice,
-  isRejectedWithValue,
-} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const CONVERSATION_ENDPOINT = `${process.env.REACT_APP_API_ENDPOINT}/conversation`;
@@ -105,12 +101,11 @@ export const chatSlice = createSlice({
       state.activeConversation = action.payload;
     },
     updateMessagesAndConversations: (state, action) => {
-      //update messages
       let convo = state.activeConversation;
       if (convo._id === action.payload.conversation._id) {
         state.messages = [...state.messages, action.payload];
       }
-      //update conversations
+
       let conversation = {
         ...action.payload.conversation,
         latestMessage: action.payload,
@@ -182,6 +177,7 @@ export const chatSlice = createSlice({
   },
 });
 
-export const { setActiveConversation, updateMessagesAndConversations } = chatSlice.actions;
+export const { setActiveConversation, updateMessagesAndConversations } =
+  chatSlice.actions;
 
 export default chatSlice.reducer;

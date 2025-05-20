@@ -17,6 +17,7 @@ function Home({ socket }) {
 
   useEffect(() => {
     socket.emit("join", user._id);
+
     socket.on("get-online-users", (users) => {
       setOnlineUsers(users);
     });
@@ -39,9 +40,7 @@ function Home({ socket }) {
 
   return (
     <div className="h-screen dark:bg-dark_bg_1 flex items-center justify-center overflow-hidden">
-      {/*container*/}
       <div className="container h-screen flex py-[19px]">
-        {/*Sidebar*/}
         <SideBar onlineUsers={onlineUsers} typing={typing} />
         {activeConversation._id ? (
           <ChatContainer onlineUsers={onlineUsers} typing={typing} />
